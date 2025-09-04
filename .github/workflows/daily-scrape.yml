@@ -21,6 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # 👇 Nouveau step pour lister les fichiers
+      - name: Show working directory
+        run: pwd
+
+      - name: List all files
+        run: ls -R
+
       - name: Run Scraper
         run: npm run scrape
 
