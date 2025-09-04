@@ -1,7 +1,6 @@
 // Lance le scraper au déploiement
-import '../scraper.js'; // si tu es en ESM
-// ou require('../scraper.js'); si tu restes en CommonJS
-
+// import '../scraper.js'; // si tu es en ESM
+require('../scraper.js'); 
 module.exports = (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*"); // 👈 important pour Stremio
