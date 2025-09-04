@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/manifest.json", "destination": "/api/manifest" },
+    { "source": "/catalog/:match*", "destination": "/api/router" },
+    { "source": "/stream/:match*", "destination": "/api/router" },
+    { "source": "/meta/:match*", "destination": "/api/router" }
+  ]
+}
