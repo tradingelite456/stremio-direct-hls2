@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 // URL de la page principale des films
-const BASE_URL = 'https://cinepulse.to';
+const BASE_URL = 'https://cinepulse.to/play/10c1swh1QbqBhJDNeZHshJw8MJvnvIssuo0DDThBack';
 
 // Fonction pour récupérer tous les films
 async function fetchMovies() {
