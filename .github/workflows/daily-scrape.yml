@@ -28,11 +28,6 @@ jobs:
       - name: List all files
         run: ls -R
 
-      - name: List root files
-       run: ls -al
- 
-      - name: List api folder
-        run: ls -al api
 
 
       - name: Run Scraper
