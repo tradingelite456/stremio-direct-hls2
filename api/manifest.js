@@ -1,7 +1,12 @@
+// Lance le scraper au déploiement
+import '../scraper.js'; // si tu es en ESM
+// ou require('../scraper.js'); si tu restes en CommonJS
+
 module.exports = (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*"); // 👈 important pour Stremio
   res.statusCode = 200;
+
   const manifest = {
     id: "org.directhls",
     version: "1.0.0",
@@ -19,7 +24,6 @@ module.exports = (req, res) => {
     idPrefixes: ["directhls_"]
   };
 
-  res.setHeader("Content-Type", "application/json");
-  res.statusCode = 200;
   res.end(JSON.stringify(manifest));
 };
+
