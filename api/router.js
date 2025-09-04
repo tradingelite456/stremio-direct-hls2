@@ -31,7 +31,18 @@ function stripJson(s) {
 }
 
 // Router principal
+
 module.exports = (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") {
+    res.statusCode = 200;
+    return res.end();
+  }
+
+
+  
   const url = new URL(req.url, "http://localhost"); // base fictive pour parser
   // Sur Vercel, nos fonctions vivent sous /api/* → on retire ce préfixe
   const path = url.pathname.replace(/^\/api/, "");
