@@ -84,5 +84,7 @@ async function generateRouter() {
   console.log('router.js généré avec succès avec', routerData.length, 'films');
 }
 
-// Lancer le script
-generateRouter();
+(async () => {
+  await generateRouter();
+})();
+
