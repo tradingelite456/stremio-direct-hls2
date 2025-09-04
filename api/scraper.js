@@ -1,7 +1,8 @@
-import axios from 'axios';
-import cheerio from 'cheerio';
-import fs from 'fs';
-import path from 'path';
+// scraper.js en CommonJS
+const axios = require('axios');
+const cheerio = require('cheerio');
+const fs = require('fs');
+const path = require('path');
 
 // URL de la page principale des films
 const BASE_URL = 'https://cinepulse.to';
@@ -33,7 +34,6 @@ async function fetchMovies() {
     });
 
     return movies;
-
   } catch (error) {
     console.error('Erreur fetchMovies:', error.message);
     return [];
@@ -54,7 +54,6 @@ async function fetchM3U8(linkPage) {
     const match = data.match(regex);
 
     return match ? match[1] : null;
-
   } catch (error) {
     console.error('Erreur fetchM3U8 pour', linkPage, error.message);
     return null;
@@ -84,7 +83,7 @@ async function generateRouter() {
   console.log('router.js généré avec succès avec', routerData.length, 'films');
 }
 
+// Exécuter le scraper
 (async () => {
   await generateRouter();
 })();
-
