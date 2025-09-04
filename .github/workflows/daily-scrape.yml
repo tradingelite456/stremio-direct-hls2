@@ -29,7 +29,8 @@ jobs:
         run: ls -al api
 
       - name: Run Scraper
-        run: npm run scrape
+        run: node api/scraper.js
+
 
       - name: Commit updated router.js
         run: |
