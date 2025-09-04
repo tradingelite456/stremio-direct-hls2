@@ -21,16 +21,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 👇 Nouveau steps pour lister les fichiers
+      # 👇 Liste les fichiers pour debug
       - name: List root files
         run: ls -al
 
       - name: List api folder
         run: ls -al api
 
+      # 👇 Affiche le package.json que GitHub Actions utilise vraiment
+      - name: Show package.json scripts
+        run: cat package.json
+
       - name: Run Scraper
         run: node api/scraper.js
-
 
       - name: Commit updated router.js
         run: |
